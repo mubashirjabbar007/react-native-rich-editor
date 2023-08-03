@@ -3,6 +3,8 @@ import {WebView} from 'react-native-webview';
 import {actions, messages} from './const';
 import {Keyboard, Platform, StyleSheet, TextInput, View, Linking} from 'react-native';
 import {createHTML} from './editor';
+// import PasteableTextInput from '@mattermost/react-native-paste-input';
+
 
 const PlatformIOS = Platform.OS === 'ios';
 
@@ -256,7 +258,7 @@ export default class RichTextEditor extends Component {
     const {html: viewHTML} = that.state;
     return (
       <>
-        <WebView
+        {/* <WebView
           useWebKit={true}
           scrollEnabled={false}
           hideKeyboardAccessoryView={true}
@@ -281,8 +283,31 @@ export default class RichTextEditor extends Component {
             }
             return true;
           }}
-        />
+        /> */}
         {Platform.OS === 'android' && <TextInput ref={ref => (that._input = ref)} style={styles._input} />}
+
+        {/* <PasteableTextInput
+            allowFontScaling={true}
+            // disableCopyPaste={disableCopyAndPaste}
+            disableFullscreenUI={true}
+            // keyboardAppearance={getKeyboardAppearanceFromTheme(theme)}
+            multiline={true}
+            // onBlur={onBlur}
+            // onChangeText={handleTextChange}
+            // onFocus={onFocus}
+            // onPaste={onPaste}
+            // onSelectionChange={handlePostDraftSelectionChanged}
+            // placeholder={intl.formatMessage(getPlaceHolder(rootId), {channelDisplayName})}
+            // placeholderTextColor={changeOpacity(theme.centerChannelColor, 0.5)}
+            ref={ref => (that._input = ref)}
+            smartPunctuation='disable'
+            submitBehavior='newline'
+            // style={pasteInputStyle}
+            // testID={testID}
+            underlineColorAndroid='transparent'
+            textContentType='none'
+            value={'value'}
+        /> */}
       </>
     );
   }
