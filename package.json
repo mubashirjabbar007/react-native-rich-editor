@@ -14,7 +14,6 @@
     "url": "https://github.com/wxik/react-native-rich-editor.git"
   },
   "dependencies": {
-    "@mattermost/react-native-paste-input": "^0.6.4"
   },
   "devDependencies": {
     "@types/react-native": "*"
